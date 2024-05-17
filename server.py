@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 from forms import LeadForm
+from utils import works
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '123' # move this to .env file later
@@ -8,12 +9,16 @@ app.config['SECRET_KEY'] = '123' # move this to .env file later
 def test():
   return 'Hello World'
 
-@app.route('/form')
+@app.route('/form', methods=['GET', 'POST'])
 def lead_form():
   form = LeadForm()
+  if form.is_submitted(): # create an is_submitted function to verify that all form inputs are valid
+    result = request.form
+    print(works())
+    return redirect('/success')
   return render_template('leadform.html', form=form)
 
-@app.route('/form-submitted')
+@app.route('/success')
 def submitted_form():
   return render_template('submitted.html')
 
