@@ -28,13 +28,7 @@ def lead_form():
   form = LeadForm()
   if form.is_submitted():
     result = request.form
-    # function to send email here
-    # populate_email(result)
-    msg = Message(subject="Hello",
-                      sender=app.config.get("MAIL_USERNAME"),
-                      recipients=["eitan.klass@gmail.com"], # replace with your email for testing
-                      body="This is a test email I sent with Gmail and Python!")
-    mail.send(msg)
+    mail.send(populate_email(result))
     return redirect('/success')
   return render_template('leadform.html', form=form)
 
