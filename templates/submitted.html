@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
- <h2>
-  Thank you for submitting
-  <a href="{{url_for('lead_form')}}">Submit another one</a>
- </h2>
+<div class="success-page">
+  <h1>
+    Your form has been submitted!
+   </h1>
+   <a href="{{url_for('lead_form')}}" class="back-form">Go back</a>
+</div>
 {% endblock %}

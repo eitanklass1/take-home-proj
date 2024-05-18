@@ -2,31 +2,28 @@
 
 {% block content %}
 
-<h2>Interest Form</h2>
-<form action="" method="post">
-  <p>
-    {{ form.first_name.label }}
-    <br>
-    {{ form.first_name(size=30) }}
-  </p>
-  <p>
-    {{ form.last_name.label }}
-    <br>
-    {{ form.last_name(size=30) }}
-  </p>
-  <p>
-    {{ form.company_name.label }}
-    <br>
-    {{ form.company_name(size=30) }}
-  </p>
-  <p>
-    {{ form.email.label }}
-    <br>
-    {{ form.email(size=30) }}
-  </p>
-  <p>
-    {{ form.submit() }}
-  </p>
-</form>
+<div class="content">
+  <h1>Interest <span class='text-span'>Form</span></h1>
+  <form action="" method="post" class="interest-form">
+      <p>
+        {{ form.first_name.label(class_="input-label") }}
+        {{ form.first_name(size=30, class_="input") }}
+      </p>
+      <p>
+        {{ form.last_name.label(class_="input-label") }}
+        {{ form.last_name(size=30, class_="input") }}
+      </p>
+      <p>
+        {{ form.company_name.label(class_="input-label") }}
+        {{ form.company_name(size=30, class_="input") }}
+      </p>
+      <p>
+        {{ form.email.label(class_="input-label") }}
+        {{ form.email(size=30, class_="input") }}
+      </p>
+      {{ form.submit(class_="submit-btn") }}
+  </form>
+</div>
+
 
 {% endblock %}

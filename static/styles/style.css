@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.content, .success-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.interest-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.success-page > h1 {
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+.text-span {
+  color: rgb(128, 128, 255);
+}
+
+.input-label {
+  display: block;
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: 2px;
+}
+
+.input {
+  border: 1px solid #eff0f6;
+  border-radius: 2rem;
+  font-family: "Outfit", sans-serif;
+  font-weight: 200;
+  font-size: 1.2rem;
+  box-shadow: rgba(128, 128, 255, 0.12) 0px 4px 12px 0px;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  color: rgb(48, 59, 85);
+}
+
+.input:focus {
+  border-width: 2px;
+  border-color: rgb(0, 170, 255);
+}
+
+.submit-btn {
+  background-image: linear-gradient(45deg, #5ce596, #0af 50%, #8080ff);
+  border-radius: 2rem;
+  border: none;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+}
+
+.back-form {
+  border: 2px solid #599cb2;
+  color: #599cb2;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2rem;
+  padding: .8rem 2rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
