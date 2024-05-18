@@ -1,8 +1,9 @@
 from flask import Flask, render_template, redirect, request
 from forms import LeadForm
-from flask_mail import Mail, Message
+from flask_mail import Mail
 import os
 from utils import populate_email
+from crm_access import create_contact
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '123' # move this to .env file later
@@ -29,6 +30,7 @@ def lead_form():
   if form.is_submitted():
     result = request.form
     mail.send(populate_email(result))
+    create_contact(result)
     return redirect('/success')
   return render_template('leadform.html', form=form)
 
